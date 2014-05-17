@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>{{ page.title }}</title>
+		<link rel="stylesheet" href="/css/master.css" type="text/css" />
+		<link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+		<!-- TODO -->
+		<!-- <link href="http://feeds.feedburner.com/UnderTheHat-10to1" rel="alternate" title="Magician Hong's Blog" type="application/atom+xml" /> -->
+		
+		<!-- //TODO <script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-6360794-1']);
+		  _gaq.push(['_setDomainName', '10to1.be']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script> -->
+				
+	</head>
+	<body>
+		<!-- //TODO <script>
+			var disqus_iframe_css = "http://10to1.github.com/css/disqus.css";
+		</script> -->
+		<p id="goto10to1"><a href="https://github.com/magicianhong/" rel="home">Return to Magician Hong's Home</a></p>
+		<div id="wrapper">
+			<h1>Magician Hong's Blog</h1>
+			<hr />
+			<div id="content">
+				{% if page.site_filter %}
+					{% if page.site_filter == 'Android' %}
+						<p id="filter">Category: <a href="/c_android">{{page.site_filter}}</a></p>
+					{% endif %}
+
+					{% if page.site_filter == '操作系统' %}
+						<p id="filter">Category: <a href="/c_os">{{page.site_filter}}</a></p>
+					{% endif %}
+
+					{% if page.site_filter == '嵌入式' %}
+						<p id="filter">Category: <a href="/c_embedded">{{page.site_filter}}</a></p>
+					{% endif %}
+					
+					{% if page.site_filter == 'Cocos2d' %}
+						<p id="filter">Category: <a href="/c_cocos2d">{{page.site_filter}}</a></p>
+					{% endif %}
+					
+					{% if page.site_filter == '非技术读书笔记' %}
+						<p id="filter">Category: <a href="/c_booknote">{{page.site_filter}}</a></p>
+					{% endif %}
+					
+					{% if page.site_filter == '其他' %}
+						<p id="filter">Category: <a href="/c_other">{{page.site_filter}}</a></p>
+					{% endif %}
+				{% endif %}
+
+				{{ content }}
+
+				{% if page.site_filter == null and paginator.total_pages > 1 %}
+				<ul id="paging">
+					{% if paginator.next_page %}
+					<li id="count">Page <strong>{{ paginator.next_page | minus:1 }}</strong> of <strong>{{ paginator.total_pages }}</strong></li>
+					{% else %}
+					<li id="count">Page <strong>{{ paginator.total_pages }}</strong> of <strong>{{ paginator.total_pages }}</strong></li>
+					{% endif %}
+					{% if paginator.previous_page %}
+					<li id="newest"><a href="/" title="Go to newest articles">Newest articles</a></li>
+						{% if paginator.previous_page > 1 %}
+						<li id="newer"><a href="/page{{ paginator.previous_page }}" title="Go to newer articles">Newer articles</a></li>
+						{% else %}
+						<li id="newer"><a href="/" title="Go to newer articles">Newer articles</a></li>
+						{% endif %}
+					{% else %}
+					<li id="newest"><a class="disabled" title="Go to newest articles">Newest articles</a></li>
+					<li id="newer"><a class="disabled" title="Go to newer articles">Newer articles</a></li>
+					{% endif %}
+					{% if paginator.next_page %}
+					<li id="oldest"><a href="/page{{ paginator.total_pages }}" title="Go to oldest articles">Oldest articles</a></li>
+					<li id="older"><a href="/page{{ paginator.next_page }}" title="Go to older articles">Older articles</a></li>
+					{% else %}
+					<li id="oldest"><a class="disabled" title="Go to oldest articles">Oldest articles</a></li>
+					<li id="older"><a class="disabled" title="Go to older articles">Older articles</a></li>
+					{% endif %}
+				</ul>
+				{% endif %}
+			</div>
+			<hr />
+			<div id="sec-content">
+				<a href="/"><img id="logo" src="/img/logo.png" alt="Under the Hat logo" /></a>
+				<div class="node" id="about">
+					<h2>Magician Hong's Blog</h2>
+					<p><strong>MAKING THE WORLD BETTER</strong></p>
+				</div>
+				<!-- //TODO -->
+				<!-- <div class="node" id="search">
+					<h2>Search</h2>
+					<form action="http://www.google.com/cse" id="cse-search-box">
+						<input type="hidden" name="cx" value="006169093033817144292:jo-onocmvqy" />
+						<input type="hidden" name="ie" value="UTF-8" />
+						<p>
+							<label><input type="text" name="q" /></label>
+							<input type="submit" name="sa" value="Search" />
+						</p>
+					</form>
+				</div> -->
+				<div class="node" id="rss">
+					<h2>Subscribe</h2>
+					<ul>
+						<!-- //TODO -->
+						<!-- <li><a href="http://feeds.feedburner.com/UnderTheHat-10to1" class='rss'>Subscribe to our RSS-feed</a></li> -->
+						<li><a href='https://twitter.com/sun_clover11'>Follow us on Twitter</a></li>
+						<li><a href='http://weibo.com/magicianhong'>Follow us on Sina Weibo</a></li>
+						<!-- <li class='newslttr'>
+							Sign up for our newsletter
+							<form action="http://10to1.us2.list-manage2.com/subscribe/post?u=fc4105fc8c7f0ebc4874ff8ab&amp;id=dc4d9b062d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+								
+									<label><input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL"></label>
+									<input type="submit" value="Sign up" name="subscribe" id="mc-embedded-subscribe" class="button">
+								
+							</form>
+						</li> -->
+					</ul>
+				</div>
+				<!-- <div class="node" id="who">
+					<h2>Who’s got the mic?</h2>
+					<ul>
+						<li>
+							<strong>Tom Klaasen</strong>
+							<em>Architecture &amp; Design</em>
+							<a href="/author/tom">Posts written by Tom</a>
+							<img src="/img/tom.png" alt="Picture of Tom" />
+						</li>
+						<li>
+							<strong>Koen Van Der Auwera</strong>
+							<em>Technical Guru</em>
+							<a href="/author/koen">Posts written by Koen</a>
+							<img src="/img/koen.png" alt="Picture of Koen" />
+						</li>
+						<li>
+							<strong>Piet Jaspers</strong>
+							<em>Glorified Typist</em>
+							<a href="/author/piet">Posts written by Piet</a>
+							<a href="http://blog.10to1.be/team/2011/09/30/team-piet/"><img src="/img/piet.png" alt="Picture of Piet" /></a>
+						</li>
+						<li>
+							<strong>Jelle Vandebeeck</strong>
+							<em>Verbeeckx</em>
+							<a href="/author/jelle">Posts written by Jelle</a>
+							<a href="http://blog.10to1.be/team/2011/10/07/team-jelle/"><img src="/img/jelle.png" alt="Picture of Jelle" /></a>
+						</li>
+						<li>
+							<strong>Bob Van Landuyt</strong>
+							<em>Developer</em>
+							<a href="/author/bob">Posts written by Bob</a>
+							<a href="http://blog.10to1.be/team/2011/11/15/team-bob/"><img src="/img/bob.png" alt="Picture of Bob" /></a>
+						</li> -->
+						<!-- <li>
+							<strong>Tom Adriaenssen</strong>
+							<em>.tom</em>
+							<a href="/author/dottom">Posts written by Tom</a>
+							<a href="http://blog.10to1.be/team/2012/03/12/team-toma/"><img src="/img/dottom.png" alt="Picture of Tom" /></a>
+						</li>						 -->
+
+						<!-- <li>
+							<strong>Sophie Nauwelaerts</strong>
+							<em>Project manager</em>
+							<a href="/author/sophie">Posts written by Sophie</a>
+							<img src="/img/sophie.png" alt="Picture of Sophie" />
+						</li>
+						<li>
+							<strong>Evert Van den Bruel</strong>
+							<em>Developer</em>
+							<a href="/author/evert">Posts written by Evert</a>
+							<img src="/img/evert.png" alt="Picture of Evert" />
+						</li> -->
+						<!-- <li>
+							<strong>Stéfanie Remeysen</strong>
+							<em>Digital Designer</em>
+							<a href="/author/stefanie">Posts written by Stéfanie</a>
+							<img src="/img/stefanie.png" als="Picture of Stéfanie" />
+						</li> -->
+				<!-- 	</ul>
+				</div> -->
+			<!-- 	<div class="node" id="projects">
+					<h2>Our projects</h2>
+					<ul>
+						<li id="eetidee"><a href="http://eetidee.be/"><strong>EetIdee</strong> What’s for dinner?</a></li>
+						<li id="twistory"><a href="http://twistory.net/"><strong>Twistory</strong> Twitter + History</a></li>
+					</ul>
+					<p>More? Check out our <a href="http://blog.10to1.be/portfolio">portfolio</a>!</p>
+				</div> -->
+				<div class="node" id="categories">
+					<h2>Categories</h2>
+					<ul>
+						<li><a href="/c_android">Android<small>{{ site.categories.c_android | size }}</small></a></li>			
+						<li><a href="/c_os">操作系统<small>{{ site.categories.c_os | size }}</small></a></li>
+
+						<li><a href="/c_embedded">嵌入式<small>{{ site.categories.c_embedded | size }}</small></a></li>
+
+						<li><a href="/c_cocos2d">Cocos2d<small>{{ site.categories.c_cocos2d | size }}</small></a></li>
+
+						<li><a href="/c_booknote">非技术读书笔记<small>{{ site.categories.c_booknote | size }}</small></a></li>
+
+						<li><a href="/c_other">其他<small>{{ site.categories.c_other | size }}</small></a></li>
+						
+					</ul>
+				</div>
+				<!-- <div class="node" id="archive">
+					<h2>Archive</h2>
+					<ul>
+						<li>
+							<a class="year" href="archive.html">2009</a>
+							<ul>
+								<li><a href="archive.html">September <small>1</small></a></li>
+								<li><a href="archive.html">August <small>2</small></a></li>
+								<li><a href="archive.html">July <small>5</small></a></li>
+								<li><a href="archive.html">June <small>2</small></a></li>
+							</ul>
+						</li>
+						<li>
+							<a class="year" href="archive.html">2008</a>
+							<ul>
+								<li><a href="archive.html">May <small>4</small></a></li>
+								<li><a href="archive.html">April <small>7</small></a></li>
+							</ul>
+						</li>
+					</ul>
+				</div> -->
+			</div>
+		</div>
+		
+		<!-- //TODO <script type="text/javascript">
+		//<![CDATA[
+		(function() {
+				var links = document.getElementsByTagName('a');
+				var query = '?';
+				for(var i = 0; i < links.length; i++) {
+					if(links[i].href.indexOf('#disqus_thread') >= 0) {
+						query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+					}
+				}
+				document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/10to1/get_num_replies.js' + query + '"></' + 'script>');
+			})();
+		//]]>
+		</script> -->
+		
+	</body>
+</html>

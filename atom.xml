@@ -1,0 +1,24 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"> 
+ <title>Magician Hong's Blog - A weblog written by Magician Hong</title>
+ <link href="http://blog.magicianhong.com/atom.xml" rel="self"/>
+ <link href="https://github.com/magicianhong/"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>http://blog.magicianhong/</id>
+ <author>
+   <name>Magician Hong</name>
+   <email>邮箱暂无</email>
+ </author> 
+ {% for post in site.posts limit:10 %}
+ <entry>
+   <title>{{ post.title }}</title>
+   <link href="http://blog.magicianhong{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>http://blog.magicianhong{{ post.id }}</id>
+   <content type="html">{{ post.content | xml_escape }}</content>
+ </entry>
+ {% endfor %} 
+</feed>
